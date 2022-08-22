@@ -386,6 +386,12 @@ ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_COPY_FILES += \
     device/google/marlin/init.common.diag.rc.userdebug:$(INIT_COMMON_DIAG_RC)
 
+# IMS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
+
 # Subsystem ramdump
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.ssr.enable_ramdumps=1
