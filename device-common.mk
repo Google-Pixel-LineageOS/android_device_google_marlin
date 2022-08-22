@@ -147,7 +147,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.contexthub@1.0-service \
     android.hardware.gnss@1.0-service \
-    android.hardware.drm@1.0-service \
     android.hardware.light@2.0-service \
     android.hardware.memtrack@1.0-service \
     android.hardware.power@1.1-service.marlin \
@@ -183,9 +182,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl:32 \
     android.hardware.audio.effect@5.0-impl:32 \
     android.hardware.soundtrigger@2.2-impl:32
-
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl
 
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
@@ -377,7 +373,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     android.frameworks.stats@1.0.vendor \
     android.hardware.biometrics.fingerprint@2.1.vendor \
-    android.hardware.biometrics.fingerprint@2.1-service
+    android.hardware.biometrics.fingerprint@2.1-service \
+    android.hardware.biometrics.fingerprint@2.2.vendor 
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -434,7 +431,9 @@ PRODUCT_PACKAGES_ENG += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl-qti:64 \
     android.hardware.bluetooth@1.0-service-qti \
-    android.hardware.bluetooth@1.0-service-qti.rc
+    android.hardware.bluetooth@1.0-service-qti.rc \
+    android.hardware.bluetooth@1.0 \
+    android.hardware.bluetooth@1.0.vendor
 
 # Bluetooth SoC
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -660,6 +659,14 @@ PRODUCT_COPY_FILES += \
 
 # DRM
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.2 \
+    android.hardware.drm@1.2.vendor \
+    android.hardware.drm@1.3 \
+    android.hardware.drm@1.3.vendor \
+    android.hardware.drm@1.4 \
+    android.hardware.drm@1.4.vendor \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
     android.hardware.drm@1.1.vendor \
     android.hardware.drm@1.4-service.clearkey
 
@@ -686,11 +693,13 @@ PRODUCT_PACKAGES += \
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0.vendor \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
@@ -702,6 +711,15 @@ PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
     PresencePolling \
     RcsService
+
+# OEMLock
+PRODUCT_PACKAGES += \
+    android.hardware.oemlock@1.0 \
+    android.hardware.oemlock@1.0.vendor
+
+# Sensors
+PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \

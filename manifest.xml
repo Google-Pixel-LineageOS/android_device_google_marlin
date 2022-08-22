@@ -154,7 +154,7 @@
     <hal format="hidl">
         <name>android.hardware.keymaster</name>
         <transport>hwbinder</transport>
-        <version>4.1</version>
+        <version>3.0</version>
         <interface>
             <name>IKeymasterDevice</name>
             <instance>default</instance>
@@ -237,6 +237,10 @@
         <version>1.0</version>
         <interface>
             <name>ISensors</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ISensorManager</name>
             <instance>default</instance>
         </interface>
     </hal>
