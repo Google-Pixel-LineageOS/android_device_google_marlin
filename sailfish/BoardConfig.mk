@@ -11,8 +11,9 @@ RELAX_USES_LIBRARY_CHECK=true
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 # ----------------------------------------------------------------------------------------------------
 
-# BUILD_BROKEN_*
-BUILD_BROKEN_DUP_RULES := true
+# Disable vbmeta checking
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
 
 TARGET_BOARD_PLATFORM := msm8996
 TARGET_BOOTLOADER_BOARD_NAME := sailfish
