@@ -61,7 +61,7 @@ TARGET_USES_QCOM_MM_AUDIO := true
 
 -include $(QCPATH)/common/msm8996/BoardConfigVendor.mk
 
-TARGET_AUX_OS_VARIANT_LIST := sailfish
+#TARGET_AUX_OS_VARIANT_LIST := sailfish
 
 # Some framework code requires this to enable BT
 BOARD_HAVE_BLUETOOTH := true
