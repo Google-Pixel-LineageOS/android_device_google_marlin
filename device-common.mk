@@ -164,18 +164,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl:64
 
-# Keymaster HAL
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1-impl:64 \
-    android.hardware.keymaster@4.1-service
-
 # Usb HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.1-service.marlin
 
-# DRM HAL
-PRODUCT_PACKAGES += \
-    move_widevine_data.sh
 
 # Audio effects
 PRODUCT_PACKAGES += \
@@ -193,7 +185,7 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.2-impl:32
 
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl:32
+    android.hardware.drm@1.0-impl
 
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
@@ -268,11 +260,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.high_performance.xml \
     frameworks/native/data/etc/android.hardware.vr.headtracking-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.headtracking.xml \
-
-# new gatekeeper HAL
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl:64 \
-    android.hardware.gatekeeper@1.0-service
 
 # Common sensor packages
 TARGET_USES_NANOHUB_SENSORHAL := true
@@ -388,6 +375,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Fingerprint HIDL implementation
 PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1.vendor \
     android.hardware.biometrics.fingerprint@2.1-service
 
 PRODUCT_COPY_FILES += \
@@ -671,11 +659,39 @@ PRODUCT_COPY_FILES += \
 
 # DRM
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.1.vendor \
     android.hardware.drm@1.4-service.clearkey
 
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     media.mediadrmservice.enable=true
+
+# Update this list with what each blob is actually for
+# libstdc++: hexagon DSP blobs
+PRODUCT_PACKAGES += \
+    libstdc++.vendor
+
+PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0.vendor
+
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0.vendor
+
+# WiFi
+PRODUCT_PACKAGES += \
+    android.system.net.netd@1.0 \
+    android.system.net.netd@1.0.vendor
+
+# Keymaster HAL
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
+
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
 
 # Google Assistant
 PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
