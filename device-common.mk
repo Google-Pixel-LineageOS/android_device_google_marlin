@@ -26,6 +26,10 @@ endif
 
 PRODUCT_SHIPPING_API_LEVEL := 25
 
+# Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kernel.ebpf.supported=false
+
 # Setting vendor SPL
 VENDOR_SECURITY_PATCH := "2019-10-06"
 
